@@ -2,7 +2,7 @@
 
 function validationName($name)
 {
-    if($name == "" || $name == null) {
+    if ($name == "" || $name == null) {
         return 'name cannot be empty';
     }
 
@@ -11,20 +11,22 @@ function validationName($name)
     }
 }
 
-function validationEmail($email) {
-    if($email == "" || $email == null) {
+function validationEmail($email)
+{
+    if ($email == "" || $email == null) {
         return 'email cannot be empty';
     } else if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return 'email is not valid';
     }
 }
 
-function validationPassword($password , $passwordConfirm) {
-    if($password == NULL ) {
+function validationPassword($password, $passwordConfirm)
+{
+    if ($password == NULL) {
         return 'password cannot be empty';
     }
 
-    if($password != $passwordConfirm) {
+    if ($password != $passwordConfirm) {
         return 'passwords do not match';
     }
 }

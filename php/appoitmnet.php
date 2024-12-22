@@ -1,9 +1,23 @@
+<?php
+include_once '../php/connection.php';
+
+session_start();
+if (isset($_SESSION['name'])) {
+    $name = $_SESSION['name'];
+    $email = $_SESSION['email'];
+
+    echo "Welcome, " . $name . "!";
+    echo "<br>Your Email: " . $email;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link ref="stylesheet" href="../css/app.css">
     <title>Document</title>
 </head>
 

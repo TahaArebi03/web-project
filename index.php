@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,11 +21,16 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-        </ul> 
-        <div class="buttons">
-          <a href="auth/login.php"  class="login">Log In</a>
-          <a href="auth/register.php" class="signup">Sign Up</a>
-        </div>
+        </ul>
+          <div class="buttons">
+              <?php if(isset($_SESSION['user']['name'])): ?>
+                  <a href="auth/logout.php" class="login">Logout</a>
+              <?php else: ?>
+                  <a href="auth/login.php" class="login">Log In</a>
+                  <a href="auth/register.php" class="signup">Sign Up</a>
+              <?php endif; ?>
+          </div>
+
       </nav>
     </header>
     <div class="card-list">

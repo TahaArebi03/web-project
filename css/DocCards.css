@@ -9,93 +9,118 @@
 }
 
 body {
-  background: #ecececdb;
+  background: #f4f7fc; /* Light blue-gray background */
+  color: #333; /* Dark text color for contrast */
+}
+
+.card-item {
+  text-align: center;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #fff; /* White background for cards */
+  padding: 24px; /* Inner padding */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover transition */
+}
+
+.card-item:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
 }
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1250px;
-  margin: 150px auto;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
   gap: 20px;
-}
-
-.card-list .card-item {
-  background: #fff;
-  padding: 26px;
-  border-radius: 8px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
-  list-style: none;
-  cursor: pointer;
-  text-decoration: none;
-  border: 2px solid transparent;
-  transition: border 0.5s ease;
-}
-
-.card-list .card-item:hover {
-  border: 2px solid #000;
-}
-
-.card-list span {
-  display: inline-block;
-  background: #f7dff5;
-  margin-top: 32px;
-  padding: 8px 15px;
-  font-size: 0.75rem;
-  border-radius: 50px;
-  font-weight: 600;
-}
-
-.card-list .developer {
-  background-color: #f7dff5;
-  color: #b22485;
-}
-
-.card-list .designer {
-  background-color: #d1e8ff;
-  color: #2968a8;
-}
-
-.card-list .editor {
-  background-color: #d6f8d6;
-  color: #205c20;
+  max-width: 1250px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
 .card-item h3 {
-  color: #000;
-  font-size: 1.438rem;
-  margin-top: 28px;
+  color: #07074d; /* Dark blue for title */
+  font-size: 1.5rem;
   font-weight: 600;
+  margin-top: 16px;
 }
 
-.card-item .arrow {
+.card-list .arrow {
   display: flex;
   align-items: center;
   justify-content: center;
   transform: rotate(-35deg);
   height: 40px;
   width: 40px;
-  color: #000;
-  border: 1px solid #000;
+  color: #fff;
+  background-color: #6a64f1; /* Blue circle */
+  border: none;
   border-radius: 50%;
-  margin-top: 40px;
-  transition: 0.2s ease;
+  margin-top: 24px;
+  transition: background-color 0.3s ease;
 }
 
 .card-list .card-item:hover .arrow {
-  background: #000;
-  color: #fff;
+  background-color: #4a48d2; /* Darker blue on hover */
 }
 
+.card-list span {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 15px;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.card-list .developer {
+  background-color: #f7dff5; /* Soft pink background */
+  color: #b22485; /* Developer text color */
+}
+
+.card-list .designer {
+  background-color: #d1e8ff; /* Soft blue background */
+  color: #2968a8; /* Designer text color */
+}
+
+.card-list .editor {
+  background-color: #d6f8d6; /* Soft green background */
+  color: #205c20; /* Editor text color */
+}
+
+.button-container {
+  margin-top: 15px;
+}
+
+.booking-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #6a64f1; /* Blue background */
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #4a48d2; /* Darker blue on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+}
+
+.booking-button:active {
+  background-color: #3830a3; /* Even darker blue when clicked */
+}
+
+/* Responsive Design for larger screens */
 @media (max-width: 1200px) {
   .card-list .card-item {
-    padding: 15px;
+    padding: 20px; /* Less padding on smaller screens */
   }
 }
 
-@media screen and (max-width: 980px) {
+@media (max-width: 980px) {
   .card-list {
-    margin: 0 auto;
+    margin: 0 auto; /* Center the card list on small screens */
   }
 }
