@@ -98,7 +98,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <option value="">Select Service</option>
                 <option value="consultation">Consultation</option>
                 <option value="followUp">Follow-up</option>
-                <option value="evaluation">Evaluation</option>
             </select>
 
             <label for="notes">Additional Notes:</label>
