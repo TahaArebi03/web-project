@@ -30,3 +30,18 @@ function validationPassword($password, $passwordConfirm)
         return 'passwords do not match';
     }
 }
+
+
+
+
+function validatePhone($phone) {
+    return !preg_match('/^[0-9]{10,15}$/', $phone) ? "Phone number must be 10-15 digits. " : "";
+}
+
+function validateAppointmentDate($appointmentDate) {
+    return (empty($appointmentDate) || $appointmentDate < date('Y-m-d')) ? "Invalid appointment date. " : "";
+}
+
+function validateAppointmentTime($appointmentTime) {
+    return empty($appointmentTime) ? "Appointment time is required. " : "";
+}
