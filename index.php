@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -19,11 +20,11 @@ session_start();
         <label for="menu-toggle" id="hamburger-btn">&#9776;</label>
         <ul class="links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="res.php">Booking</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
           <div class="buttons">
-              <?php if(isset($_SESSION['user']['name'])): ?>
+              <?php if(isset($_SESSION['user']['userName'])): ?>
                   <a href="auth/logout.php" class="login">Logout</a>
               <?php else: ?>
                   <a href="auth/login.php" class="login">Log In</a>
@@ -34,78 +35,79 @@ session_start();
       </nav>
     </header>
     <div class="card-list">
-      <a href="#" class="card-item">
-        <img src="photos/ibm2s2cn.png" alt="" />
-        <span class="internal">Internal Medicine</span>
-        <h3>
-          Receive expert care and management for chronic illnesses in Internal
-          Medicine, ensuring your long-term health.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/ny8yk62i.png" alt="" />
-        <span class="surgery">General Surgery</span>
-        <h3>
-          Trust skilled hands for life-saving procedures and precision
-          treatments in General Surgery.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/9d2tq81j.png" alt="" />
-        <span class="ophthalmology">Ophthalmology</span>
-        <h3>
-          Preserve your eyesight and treat eye conditions effectively with our
-          specialized Ophthalmology services.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/zdzjdv04.png" alt="" />
-        <span class="otorhinolaryngology">Otorhinolaryngology</span>
-        <h3>
-          Find relief for ear, nose, and throat issues with personalized care in
-          Otorhinolaryngology.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/37f0ilul.png" alt="" />
-        <span class="radiology">Radiology</span>
-        <h3>
-          Rely on advanced imaging like X-rays and MRIs for quick and accurate
-          results in Radiology.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/wmdrc5la.png" alt="" />
-        <span class="psychiatry">Psychiatry</span>
-        <h3>
-          Improve your mental health and overall well-being with supportive and
-          tailored care in Psychiatry.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/sgdcmymr.png" alt="" />
-        <span class="Dermatology">Dermatology</span>
-        <h3>
-          Treat skin conditions, enhance your appearance, and regain confidence
-          with our expert Dermatology team.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/8o9ywzds.png" alt="" />
-        <span class="Pediatrics">Pediatrics</span>
-        <h3>
-          Keep your child healthy and thriving with compassionate and
-          comprehensive care in Pediatrics.
-        </h3>
-      </a>
-      <a href="#" class="card-item">
-        <img src="photos/8p7qhwth.png" alt="" />
-        <span class="Plastic surgery">Plastic surgery</span>
-        <h3>
-          Restore form and function or enhance your natural beauty with skilled
-          procedures in Plastic Surgery.
-        </h3>
-      </a>
+        <div class="card-item">
+            <img src="photos/ibm2s2cn.png" alt="" />
+            <span class="internal">Internal Medicine</span>
+            <h3>
+                Receive expert care and management for chronic illnesses in Internal
+                Medicine, ensuring your long-term health.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="Internal Medicine" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+
+        <div class="card-item">
+            <img src="photos/ny8yk62i.png" alt="" />
+            <span class="surgery">General Surgery</span>
+            <h3>
+                Trust skilled hands for life-saving procedures and precision
+                treatments in General Surgery.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="General Surgery" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+
+        <div class="card-item">
+            <img src="photos/ny8yk62i.png" alt="" />
+            <span class="Orthopedics">Orthopedics</span>
+            <h3>
+                Get advanced care for bones, joints, and muscles to stay active and pain-free.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="Orthopedics" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+        <div class="card-item">
+            <img src="photos/ny8yk62i.png" alt="" />
+            <span class="Cardiology">Cardiology</span>
+            <h3>
+                Ensure a healthy heart with expert diagnostics and treatments in Cardiology.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="Cardiology" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+        <div class="card-item">
+            <img src="photos/ny8yk62i.png" alt="" />
+            <span class="Neurology">Neurology</span>
+            <h3>
+                Receive specialized care for brain, spine, and nervous system conditions in Neurology.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="Neurology" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+        <div class="card-item">
+            <img src="photos/ny8yk62i.png" alt="" />
+            <span class="Oncology">Oncology</span>
+            <h3>
+                Access cutting-edge cancer treatments and compassionate care in Oncology.
+            </h3>
+            <form action="php/DoctorsList.php" method="GET">
+                <input type="hidden" name="specialty" value="Oncology" />
+                <button type="submit" class="view-doctors-btn">View Doctors</button>
+            </form>
+        </div>
+
+        <!-- Add similar sections for other specialties -->
     </div>
+
   </body>
 </html>

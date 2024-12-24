@@ -41,13 +41,13 @@ function test_data($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-function login($phone, $password, $conn)
+function login($email, $password, $conn)
 {
     try {
         // Prepare the SQL query to fetch the user by username
-        $query = 'SELECT * FROM users WHERE phone_number = :phone ';
+        $query = 'SELECT * FROM users WHERE email = :email ';
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
 
         // Check if user exists
@@ -59,8 +59,8 @@ function login($phone, $password, $conn)
                 // Start the session and store user information
                 $_SESSION['user'] = [
                     'id' => $user['u_no'],
-                    'phone_number' => $user['phone_number'],
                     'userName' => $user['u_name'],
+                    'email' => $user['email'],
                 ];
 
                 if($user['priv'] == 2) {
@@ -133,12 +133,11 @@ function validateDay($day)
 
 
 
-function register($name, $phone, $password)
+function register($name, $email, $password)
 {
     $_SESSION['user'] = [
-
-        'name' => $name,
-        'phone' => $phone,
+        'userName' => $name,
+        'email' => $email,
         'password' => $password
     ];
     return ;

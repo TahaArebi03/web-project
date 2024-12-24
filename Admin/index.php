@@ -56,7 +56,7 @@
         </ul>
     </div>
     <div class="sidebar-footer">
-        <a href="#">Logout</a>
+        <a href="../auth/logout.php">Logout</a>
     </div>
 </div>
 

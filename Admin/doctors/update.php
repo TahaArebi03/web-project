@@ -198,10 +198,11 @@ function updateDoctor($conn , $id , $name, $email, $speciality, $expr_years, $ge
         <label for="speciality">Speciality:</label>
         <select id="speciality" name="speciality" required>
             <option value="">Select speciality</option>
-            <option value="surgery">surgery</option>
-            <option value="bones">bones</option>
-            <option value="eyes">eyes</option>
-            <option value="nerves">nerves</option>
+            <option value="Internal Medicine">Internal Medicine</option>
+            <option value="General Surgery">General Surgery</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
         </select>
         <?php if (isset($specialityErr)) echo '<span class="error">' . $specialityErr . '</span>'; ?>
     </div>

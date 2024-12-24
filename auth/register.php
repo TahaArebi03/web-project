@@ -6,10 +6,10 @@ require '../auth/validations.php';
 
 $nameErr = $phoneErr =  $passwordErr = "";
 
-function insertUser($conn, $name, $phone, $password)
+function insertUser($conn, $name, $email, $password)
 {
   try {
-    $sql = "INSERT INTO users (u_name ,PASSWORD,phone_number,priv) values('$name','$password','$phone' , '1')";
+    $sql = "INSERT INTO users (u_name ,PASSWORD,email,priv) values('$name','$password','$email' , '1')";
     $conn->exec($sql);
     echo "Record insert successfully ";
     return;
@@ -20,18 +20,18 @@ function insertUser($conn, $name, $phone, $password)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // تعريف متغيرات
   $name = $_POST['name'];
-  $phone = $_POST['phone'];
+  $email = $_POST['email'];
   $password = $_POST['password'];
   $pasword_confirm = $_POST['password_confirm'];
 
   $nameErr = validationName($name);
-  $phoneErr = validateNumber($phone);
+  $emailErr = validationEmail($email);
   $passwordErr = validationPassword($password,  $pasword_confirm);
 
-  if (empty($nameErr) && empty($phoneErr) && empty($passwordErr)) {
+  if (empty($nameErr) && empty($emailErr) && empty($passwordErr)) {
 
-    register($name, $phone, $password);
-    insertUser($conn, $name, $phone, $password);
+    register($name, $email, $password);
+    insertUser($conn, $name, $email, $password);
 
     header("location: ../index.php");
     exit();
@@ -73,17 +73,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
       </div>
         <br>
-      <div class="input-box">
-        <input type="text" placeholder="Enter your phone" name="phone"
-          class="<?php if (isset($phoneErr)): ?>  <?php endif; ?>"
-          required />
-        <?php
-        if (isset($phoneErr)): ?>
-          <p class='red'> <?= $phoneErr  ?> </p>
-        <?php
-        endif;
-        ?>
-      </div>
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" name="email"  required>
+            <?php if (isset($errors['email'])): ?>
+                <div class="error"><?php echo $errors['email']; ?></div>
+            <?php endif; ?>
+        </div>
         <br>
 
       <div class="input-box">

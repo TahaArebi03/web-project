@@ -42,13 +42,13 @@ function getDoctors($conn)
         </ul>
     </div>
     <div class="sidebar-footer">
-        <a href="#">Logout</a>
+        <a href="../../auth/logout.php">Logout</a>
     </div>
 </div>
 
 <div class="main-content">
     <h2>Appointments</h2>
-    <a href="create.php" class="add-button">Add Doctor</a>
+    <a href="addDoctor.php" class="add-button">Add Doctor</a>
     <table>
         <thead>
         <tr>
