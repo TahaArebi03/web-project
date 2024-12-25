@@ -1,7 +1,10 @@
 <?php
 include_once '../php/connection.php';
 
-
+if(isset($_POST['speciality'])){
+    $speciality = $_POST['speciality'];
+    $doctors = getDoctorsBySpecialty($conn, $speciality);
+}
 
 function getDoctorsBySpecialty($conn,$speciality)
 {
@@ -16,11 +19,11 @@ function getDoctorsBySpecialty($conn,$speciality)
 }
 
 if(isset( $_GET['specialty'])) {
+    echo "yeahhh";
     $specialty= $_GET['specialty'];
     $doctors = getDoctorsBySpecialty($conn, $specialty);
+
 }
-
-
 
 ?>
 
@@ -153,6 +156,7 @@ if(isset( $_GET['specialty'])) {
             <?= 'Day Works:' . htmlspecialchars($doctor['day_work']) ?> <br>
         </div>
         <form method="GET" action="appoitmnet.php">
+            <input type="hidden" value="<?=$doctor['spatiality'] ?>" name ="speciality">
             <input type="hidden" value="<?= $doctor['doc_no'] ?>" name="id">
             <input type="submit" class="book-now-btn" value="book now">
         </form>

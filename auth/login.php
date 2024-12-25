@@ -303,9 +303,7 @@ input:focus {
                 <?php if (isset($log)): ?>
                     <div class="error"><?php echo $log; ?></div>
                 <?php endif; ?>
-                <div class="forgot-pass">
-                    <a href="#">Forgot Password?</a>
-                </div>
+
                 <div class="btn">
                     <div class="inner"></div>
                     <button type="submit">login</button>
