@@ -69,6 +69,7 @@ function getRes($conn, $email)
         return $results;
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
+
         return [];
     }
 }

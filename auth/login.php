@@ -31,11 +31,16 @@ function validationEmail($email)
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+
         <title>Popup Login Form Design</title>
+
+        <title>Login Form </title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
         <link rel="stylesheet" href="../css/login.css">
     </head>
     <style>
+
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(45deg, #3498db, #8e44ad);
@@ -131,6 +136,140 @@ function validationEmail($email)
             margin-top: -10px;
             margin-bottom: 10px;
         }
+=======
+        /* Base styles for the login page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    position: relative;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444;
+}
+
+.data {
+    margin: 10px 0;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.btn {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    padding: 10px 20px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn button:hover {
+    background: #21618c;
+}
+
+.forgot-pass {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.forgot-pass a {
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .center {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    .btn button {
+        font-size: 14px;
+    }
+
+    .forgot-pass a, .signup-link a {
+        font-size: 12px;
+    }
+}
+>>>>>>> 51a11376b00999612a61a0d1f66c38da43c5b9f0
 
         .error {
             color: red;
